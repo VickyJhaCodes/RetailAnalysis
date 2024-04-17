@@ -1,0 +1,68 @@
+24/04/13 10:10:17 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+24/04/13 10:10:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/04/13 10:10:27 WARN CSVHeaderChecker: CSV header does not conform to the schema.
+ Header: order_customer_id, order_status
+ Schema: customer_id, order_status
+Expected: customer_id but found: order_customer_id
+CSV file: file:///C:/Users/Vicky%20Jha/Desktop/DATA%20ENGINEERING%20FINAL/RetailAnalysis/data/orders.csv
+24/04/13 10:10:29 WARN retail_analysis: End of main..
+24/04/13 10:13:53 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+24/04/13 10:13:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/04/13 10:14:03 WARN CSVHeaderChecker: CSV header does not conform to the schema.
+ Header: order_customer_id, order_status
+ Schema: customer_id, order_status
+Expected: customer_id but found: order_customer_id
+CSV file: file:///C:/Users/Vicky%20Jha/Desktop/DATA%20ENGINEERING%20FINAL/RetailAnalysis/data/orders.csv
+24/04/13 10:14:05 WARN retail_analysis: End of main..
+24/04/13 10:14:05 ERROR ShutdownHookManager: Exception while deleting Spark temp dir: C:\Users\Vicky Jha\AppData\Local\Temp\spark-2b65ed1d-1bf8-41c7-8049-43451af51288\pyspark-8e92c7fe-6fe4-402a-bf2c-b27c404f554e
+java.nio.file.NoSuchFileException: C:\Users\Vicky Jha\AppData\Local\Temp\spark-2b65ed1d-1bf8-41c7-8049-43451af51288\pyspark-8e92c7fe-6fe4-402a-bf2c-b27c404f554e
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:79) ~[?:1.8.0_202]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97) ~[?:1.8.0_202]
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102) ~[?:1.8.0_202]
+	at sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:53) ~[?:1.8.0_202]
+	at sun.nio.fs.WindowsFileAttributeViews$Basic.readAttributes(WindowsFileAttributeViews.java:38) ~[?:1.8.0_202]
+	at sun.nio.fs.WindowsFileSystemProvider.readAttributes(WindowsFileSystemProvider.java:193) ~[?:1.8.0_202]
+	at java.nio.file.Files.readAttributes(Files.java:1737) ~[?:1.8.0_202]
+	at org.apache.spark.network.util.JavaUtils.deleteRecursivelyUsingJavaIO(JavaUtils.java:124) ~[spark-common-utils_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:117) ~[spark-common-utils_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.network.util.JavaUtils.deleteRecursively(JavaUtils.java:90) ~[spark-common-utils_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively(SparkFileUtils.scala:121) ~[spark-common-utils_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.util.SparkFileUtils.deleteRecursively$(SparkFileUtils.scala:120) ~[spark-common-utils_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.util.Utils$.deleteRecursively(Utils.scala:1126) ~[spark-core_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4(ShutdownHookManager.scala:65) ~[spark-core_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$4$adapted(ShutdownHookManager.scala:62) ~[spark-core_2.12-3.5.1.jar:3.5.1]
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36) ~[scala-library-2.12.18.jar:?]
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33) ~[scala-library-2.12.18.jar:?]
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198) ~[scala-library-2.12.18.jar:?]
+	at org.apache.spark.util.ShutdownHookManager$.$anonfun$new$2(ShutdownHookManager.scala:62) ~[spark-core_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214) ~[spark-core_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188) ~[spark-core_2.12-3.5.1.jar:3.5.1]
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23) ~[scala-library-2.12.18.jar:?]
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928) ~[spark-core_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188) ~[spark-core_2.12-3.5.1.jar:3.5.1]
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23) [scala-library-2.12.18.jar:?]
+	at scala.util.Try$.apply(Try.scala:213) [scala-library-2.12.18.jar:?]
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188) [spark-core_2.12-3.5.1.jar:3.5.1]
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178) [spark-core_2.12-3.5.1.jar:3.5.1]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_202]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_202]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_202]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_202]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_202]
+24/04/13 10:14:58 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+24/04/13 10:14:58 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/04/13 10:15:08 WARN CSVHeaderChecker: CSV header does not conform to the schema.
+ Header: order_customer_id, order_status
+ Schema: customer_id, order_status
+Expected: customer_id but found: order_customer_id
+CSV file: file:///C:/Users/Vicky%20Jha/Desktop/DATA%20ENGINEERING%20FINAL/RetailAnalysis/data/orders.csv
+24/04/13 10:15:10 WARN retail_analysis: End of main..
+24/04/13 10:16:15 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+24/04/13 10:16:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/04/13 10:16:18 INFO retail_analysis: SparkSession created..
+24/04/13 10:16:25 WARN CSVHeaderChecker: CSV header does not conform to the schema.
+ Header: order_customer_id, order_status
+ Schema: customer_id, order_status
+Expected: customer_id but found: order_customer_id
+CSV file: file:///C:/Users/Vicky%20Jha/Desktop/DATA%20ENGINEERING%20FINAL/RetailAnalysis/data/orders.csv
+24/04/13 10:16:28 WARN retail_analysis: End of main..
