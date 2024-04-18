@@ -1,35 +1,36 @@
-pipeline{
-    agent any
+pipeline { 
+	agent any
 
-    environment{
-        LABS=credentials('labcreds')
-    }
+	environment {
+		LABS = credentials('labcreds')
+	}
 
-    stages{
-        stage('Build') {
-            steps {
-                sh 'pip3 install --user pipenv'
-                sh '/bitnami/jenkins/home/.local/bin/pipenv --rm || exit 0'
-                sh '/bitnami/jenkins/home/.local/bin/pipenv install
-            }
-        }
-        stage('Test'){
-            steps {
-                sh '/bitnami/jenkins/home/.local/bin/pipenv run pytest'
-            }
-        }
+	stages {
+		stage('Build') { 
+			steps {
+				sh 'pip3 install --user pipenv'
+				sh '/bitnami/jenkins/home/.local/bin/pipenv --rm || exit 0' 
+				sh '/bitnami/jenkins/home/.local/bin/pipenv install'
+			}
+		}
 
-        stage('Package') {
-            steps {
-                sh 'zip -r retailproject.zip .'
-            }
-        }
+		stage('Test') { 
+			steps {
+				sh '/bitnami/jenkins/home/.local/bin/pipenv run pytest'
+			}
+		}
 
-        stage('Deploy') {
-            steps {
-                sh 'sshpass -p $LABS_PSW scp -o StrictHostKeyChecking=no -r.$LABS_USR@g01.itversity.com:/home/itv007136/retailproject'
-            }
-        }
-    }
+		stage('Package') { 
+			steps {
+				sh 'zip -r retailproject.zip .'
+			}
+		}
+		
+		stage('Deploy') { 
+			steps {
+				sh 'sshpass -p $LABS_PSW scp -o StrictHostKeyChecking=no -r . $LABS_USR@g01.itversity.com:/home/itv007136/retailproject'
+			}
+		}
 
+	}
 }
